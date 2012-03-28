@@ -9,5 +9,3 @@
 // @updateURL   https://raw.github.com/Paperfold/Drawceptional/master/drawceptional.meta.js
 // @match       http://drawception.com/play/
 // ==/UserScript==
-
-/* Code goes here. Also maybe license and stuff, but eh. */
