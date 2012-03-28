@@ -7,7 +7,8 @@ After that, install Drawceptional by clicking [here](https://raw.github.com/Pape
 Just click [here](https://raw.github.com/Paperfold/Drawceptional/master/drawceptional.user.js) to install Drawceptional.
 
 # Description
-Drawceptional adds various features while drawing on Drawceptional. A couple of examples:  
+Drawceptional adds various features while drawing on Drawceptional. A couple of examples:
+
 * More colours  
 * Add your own colours (with colourpicker)  
 * Better pen size picker  
