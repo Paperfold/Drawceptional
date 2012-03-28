@@ -8,7 +8,7 @@ Just click [here](https://raw.github.com/Paperfold/Drawceptional/master/drawcept
 
 # Description
 Drawceptional adds various features while drawing on Drawceptional. A couple of examples:  
-- More colours  
-- Add your own colours (with colourpicker)  
-- Better pen size picker  
-- Double resolution drawing space (more room for detail)
+* More colours  
+* Add your own colours (with colourpicker)  
+* Better pen size picker  
+* Double resolution drawing space (more room for detail)
