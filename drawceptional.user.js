@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Drawceptional
-// @version     0.1.3
+// @version     0.1.3.1
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold
@@ -17,6 +17,7 @@
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://sam.zoy.org/wtfpl/COPYING for more details. */ 
 
+
 options = {'Double resolution': true,
            'Time limit': false}
 
@@ -29,7 +30,7 @@ if (!options['Time limit']) {
 }
 
 // Check if we're drawing or describing
-if (document.getElementById('drawingCanvas') {
+if (document.getElementById('drawingCanvas')) {
     // We're drawing
     if (options['Double resolution']) {
         document.getElementById('gameForm').style.width = '700px';
