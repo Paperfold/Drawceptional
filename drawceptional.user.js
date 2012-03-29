@@ -4,6 +4,7 @@
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold
+// @license     WTFPL
 // @icon        https://github.com/Paperfold/Drawceptional/raw/master/icon.png
 // @icon64      https://github.com/Paperfold/Drawceptional/raw/master/icon64.png
 // @updateURL   https://raw.github.com/Paperfold/Drawceptional/master/drawceptional.meta.js
@@ -16,4 +17,19 @@
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://sam.zoy.org/wtfpl/COPYING for more details. */ 
 
-// Options go here? GM_setValue all up in this file
+options = {'Double resolution': true,
+           'Time limit': false}
+
+var drawing_canvas = document.getElementById('drawingCanvas')
+
+if (options['Double resolution']) {
+    document.getElementById('gameForm').style.width = '700px';
+    drawing_canvas.width = 600;
+    drawing_canvas.height = 500;
+}
+
+if (!options['Time limit']) {
+    // Ugly hack, but preserves sandbox security
+    location.assign("javascript:$('#timeleft').countdown('pause'); void(0)");
+    document.getElementById('timeleft').style.display = 'none';
+}

@@ -9,8 +9,10 @@ Just click [here](https://raw.github.com/Paperfold/Drawceptional/master/drawcept
 # Description
 Drawceptional adds various features while drawing on Drawceptional. A couple of examples:
 
-* More colours  
-* Add your own colours (with colourpicker)  
-* Better pen size picker  
+* More colours *(TODO)*
+* Add your own colours (with colourpicker) *(TODO)*
+* Better pen size picker *(TODO)*
+* More drawing tools (paintbucket, rectangle, line etc.) *(TODO)*
 * Double resolution drawing space (more room for detail)
-* No time limit on drawing
+* No time limit on drawing/describing
+* An options menu to select which of these features you want *(TODO)*
