@@ -13,3 +13,4 @@ Drawceptional adds various features while drawing on Drawceptional. A couple of 
 * Add your own colours (with colourpicker)  
 * Better pen size picker  
 * Double resolution drawing space (more room for detail)
+* No time limit on drawing
