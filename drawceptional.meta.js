@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Drawceptional
-// @version     0.1.2
+// @version     0.1.3
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Drawceptional
-// @version     0.1.2
+// @version     0.1.3
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold
@@ -22,14 +22,21 @@ options = {'Double resolution': true,
 
 var drawing_canvas = document.getElementById('drawingCanvas')
 
-if (options['Double resolution']) {
-    document.getElementById('gameForm').style.width = '700px';
-    drawing_canvas.width = 600;
-    drawing_canvas.height = 500;
-}
-
 if (!options['Time limit']) {
     // Ugly hack, but preserves sandbox security
     location.assign("javascript:$('#timeleft').countdown('pause'); void(0)");
     document.getElementById('timeleft').style.display = 'none';
+}
+
+// Check if we're drawing or describing
+if (document.getElementById('drawingCanvas') {
+    // We're drawing
+    if (options['Double resolution']) {
+        document.getElementById('gameForm').style.width = '700px';
+        drawing_canvas.width = 600;
+        drawing_canvas.height = 500;
+    }
+}
+else {
+    // We're describing
 }
