@@ -15,4 +15,6 @@ Drawceptional adds various features while drawing on Drawceptional. A couple of 
 - More drawing tools (paintbucket, rectangle, line etc.) **(TODO)**
 - Double resolution drawing space (more room for detail)
 - No time limit on drawing and describing
+- Undo and redo buttons **(TODO)**
+- Set your own background colour **(TODO)**
 - An options menu to select which of these features you want **(TODO)**
