@@ -16,13 +16,14 @@
  * and/or modify it under the terms of the Do What The Fuck You Want
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://sam.zoy.org/wtfpl/COPYING for more details. */ 
- 
+
 
 var options = {'Double resolution': [true],
-           'No time limit': [true],
-           'Check for updates': [true],
-           'Advertise': [true],
-           'Custom background colour': [true, '#FFFFCC']};
+               'No time limit': [true],
+               'Check for updates': [true],
+               'Advertise': [true],
+               'Custom background colour': [true, '#0000FF'],
+               'Enter to submit when describing': [true]};
            
 function id(id) {
     return document.getElementById(id);
@@ -40,24 +41,29 @@ if (options['No time limit'][0]) {
 
 // Check if we're drawing or describing
 if (id('drawingCanvas')) {
+    // We're drawing
     
     var drawingCanvas = id('drawingCanvas');
-    // We're drawing
     
     if (options['Double resolution'][0]) {
         id('gameForm').style.width = '700px';
         drawingCanvas.setAttribute('width', '600');
         drawingCanvas.setAttribute('height', '500');
         // context gets bent out of shape if we do this, so we have to reinitialize
-        location.assign('javascript:context = canvas.getContext("2d"); context.strokeStyle = defaultColor; context.lineJoin = defaultShape; context.lineWidth = defaultWidth; void(0)')
+        location.assign('javascript:context = canvas.getContext("2d"); context.strokeStyle = defaultColor; context.lineJoin = defaultShape; context.lineWidth = defaultWidth; void(0)');
     }
     
     if (options['Custom background colour'][0]) {
-        location.assign('javascript:context.fillStyle = "' + options['Custom background colour'][1] + '"; context.fillRect(0, 0, canvas.width, canvas.height); void(0)')
+        var colour = options['Custom background colour'][1];
+        var rgbColour = 'rgb(255, 0, 0)'; //'rgb(' + colour.slice(1, 3) + ', ' + colour.slice(3, 5) + ', ' + colour.slice(5, 7) + ')';
+        location.assign('javascript:context.fillStyle = "' + rgbColour + '"; context.fillRect(0, 0, canvas.width, canvas.height); void(0)');
     }
     
 } else {
-
     // We're describing
+    
+    if (options(['Enter to submit when describing'][0])) {
+        id('title').setAttribute('onkeydown', 'if (event.keyCode == 13) { savePanelText(); }');
+    }
     
 }
