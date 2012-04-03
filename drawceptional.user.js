@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Drawceptional
-// @version     0.1.3.2
+// @version     0.1.3.3
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold
@@ -19,9 +19,9 @@
 
 
 options = {'Double resolution': true,
-           'No time limit': true}
+           'No time limit': true};
 
-var drawing_canvas = document.getElementById('drawingCanvas')
+var drawing_canvas = document.getElementById('drawingCanvas');
 
 if (options['No time limit']) {
     // Ugly hack, but preserves sandbox security

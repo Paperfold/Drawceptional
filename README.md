@@ -16,3 +16,4 @@ Drawceptional adds various features while drawing on Drawceptional. A couple of 
 - Double resolution drawing space (more room for detail)
 - No time limit on drawing and describing
 - An options menu to select which of these features you want **(TODO)**
+- Submit when describing by pressing Enter **(TODO)**
