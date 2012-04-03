@@ -17,3 +17,6 @@ Drawceptional adds various features while drawing on Drawceptional. A couple of 
 - No time limit on drawing and describing
 - An options menu to select which of these features you want **(TODO)**
 - Submit when describing by pressing Enter **(TODO)**
+- Undo and redo buttons **(TODO)**
+- Set your own background colour **(TODO)**
+- An options menu to select which of these features you want **(TODO)**

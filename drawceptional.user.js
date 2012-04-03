@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Drawceptional
-// @version     0.1.3.3
+// @version     0.1.4dev
 // @description Adds various features while drawing on Drawception.
 // @author      Paperfold <dreaming.paperfold@gmail.com>
 // @namespace   Paperfold
@@ -16,28 +16,48 @@
  * and/or modify it under the terms of the Do What The Fuck You Want
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://sam.zoy.org/wtfpl/COPYING for more details. */ 
+ 
 
+var options = {'Double resolution': [true],
+           'No time limit': [true],
+           'Check for updates': [true],
+           'Advertise': [true],
+           'Custom background colour': [true, '#FFFFCC']};
+           
+function id(id) {
+    return document.getElementById(id);
+}
 
-options = {'Double resolution': true,
-           'No time limit': true};
+if (options['Check for updates'][0]) {
+    // GM_notification("There's an update available for Drawceptional! Click here to update now.", 'Update checker', null, function() {GM_openInTab('https://raw.github.com/Paperfold/Drawceptional/master/drawceptional.user.js');})
+}
 
-var drawing_canvas = document.getElementById('drawingCanvas');
-
-if (options['No time limit']) {
+if (options['No time limit'][0]) {
     // Ugly hack, but preserves sandbox security
     location.assign("javascript:$('#timeleft').countdown('pause'); void(0)");
-    document.getElementById('timeleft').style.display = 'none';
+    id('timeleft').style.display = 'none';
 }
 
 // Check if we're drawing or describing
-if (document.getElementById('drawingCanvas')) {
+if (id('drawingCanvas')) {
+    
+    var drawingCanvas = id('drawingCanvas');
     // We're drawing
-    if (options['Double resolution']) {
-        document.getElementById('gameForm').style.width = '700px';
-        drawing_canvas.width = 600;
-        drawing_canvas.height = 500;
+    
+    if (options['Double resolution'][0]) {
+        id('gameForm').style.width = '700px';
+        drawingCanvas.setAttribute('width', '600');
+        drawingCanvas.setAttribute('height', '500');
+        // context gets bent out of shape if we do this, so we have to reinitialize
+        location.assign('javascript:context = canvas.getContext("2d"); context.strokeStyle = defaultColor; context.lineJoin = defaultShape; context.lineWidth = defaultWidth; void(0)')
     }
-}
-else {
+    
+    if (options['Custom background colour'][0]) {
+        location.assign('javascript:context.fillStyle = "' + options['Custom background colour'][1] + '"; context.fillRect(0, 0, canvas.width, canvas.height); void(0)')
+    }
+    
+} else {
+
     // We're describing
+    
 }
