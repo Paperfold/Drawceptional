@@ -22,7 +22,7 @@ var options = {'Double resolution': [true],
                'No time limit': [true],
                'Check for updates': [true],
                'Advertise': [true],
-               'Custom background colour': [true, '#0000FF'],
+               'Custom background colour': [false, '#0000FF'],
                'Enter to submit when describing': [true]};
            
 function id(id) {
